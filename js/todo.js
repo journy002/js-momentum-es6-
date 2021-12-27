@@ -3,7 +3,7 @@ const todoInput = todoForm.querySelector("input");
 const todoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
-const todos = [];
+let todos = [];
 
 function saveTodos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
@@ -30,6 +30,7 @@ function paintTodo(newTodo) {
 function handleToDoSubmit(event) {
     event.preventDefault();
     const newTodo = todoInput.value;
+    console.log(newTodo);
     todoInput.value = "";
     todos.push(newTodo);
     paintTodo(newTodo);
@@ -38,14 +39,27 @@ function handleToDoSubmit(event) {
 
 todoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello(item) {
-    console.log("good", item);
-}
+// function sayHello(item) {
+//     console.log("good", item);
+// }
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
+
 console.log(savedToDos, "out");
-if (saveTodos) {
+
+if (savedToDos !== null) {
+    // JSON.stringfy()로 localStorage에 저장된 string을 다시 사용가능한 Object로 변경해주기 위해
+    // JSON.parse()을 이용한다.
     const parsedToDos = JSON.parse(savedToDos);
     // parsedToDos.forEach(sayHello); 함수를 만들어서 넣는 방법도 있다. //
-    parsedToDos.forEach((item) => console.log(item));
+
+    todos = parsedToDos;
+
+    // forEach에 함수를 넣으면 parsedToDos에서 받아오는 하나 하나의 item을 paintTodo함수에 전달한다.
+    parsedToDos.forEach(paintTodo);
 }
+
+// toDos = [];는 항상 빈 array로 시작한다.
+// toDos에 localStorage에 저장된 값을 넣어주지 않으면
+// 새로고침이 될때마다 toDos는 새로운 값만 저장하게 되고 이전 데이터는 사라지게 된다.
+// 그렇기 때문에 JSON.parse()로 가져온 값을 할당 받은 변수를 todos에 넣어줘야 한다.
