@@ -19,7 +19,7 @@ function handleLoginClick(e) {
 
 function printGreetings(username) {
     greeting.classList.remove(HIDDEN_USERNAME);
-    greeting.innerText = `Hello ${username}!`;
+    greeting.innerText = `Welcome ${username}!`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
