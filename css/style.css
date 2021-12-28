@@ -64,9 +64,6 @@ span {
     font-size: var(--font-large);
 }
 
-.momentum_container .todo-form {
-}
-
 .momentum_container .todo-form input {
     padding: 5px 20px;
     width: 12rem;
