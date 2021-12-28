@@ -1,3 +1,105 @@
+:root {
+    --color-white: #ffffff;
+
+    --font-large: 38px;
+    --font-regular: 18px;
+    --font-middle: 16px;
+    --font-middle_small: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+div,
+h1,
+h2,
+p,
+ul,
+li,
+form,
+span {
+    margin: 0;
+}
+
+#clock {
+    font-size: 95px;
+}
+
+.momentum_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--color-white);
+}
+
+.momentum_container .login-form {
+    margin: 25px 0;
+}
+
+.momentum_container .login-form input {
+    padding: 5px 20px;
+    width: 16rem;
+    height: 2.2rem;
+    font-size: var(--font-regular);
+    color: white;
+    background-color: transparent;
+    border: 0 solid black;
+    border-bottom: 2px solid mediumslateblue;
+    outline: none;
+}
+
+.momentum_container .login-form input::placeholder {
+    color: white;
+}
+
+.momentum_container .greeting {
+    margin: 20px 0;
+    font-size: var(--font-large);
+}
+
+.momentum_container .todo-form {
+}
+
+.momentum_container .todo-form input {
+    padding: 5px 20px;
+    width: 12rem;
+    height: 2.2rem;
+    font-size: var(--font-middle);
+    color: white;
+    background-color: transparent;
+    border: 0 solid black;
+    border-bottom: 2px solid mediumslateblue;
+    outline: none;
+}
+
+.momentum_container .todo-form input::placeholder {
+    color: var(--color-white);
+}
+
+#quotes {
+    position: absolute;
+    bottom: 1.5rem;
+    font-size: var(--font-middle_small);
+    text-align: center;
+}
+
+#quotes span {
+    display: block;
+}
+
+#weather {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
 .hidden {
     display: none;
 }
