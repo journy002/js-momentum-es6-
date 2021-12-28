@@ -100,6 +100,7 @@ span {
     padding: 7px 10px;
     background-color: #00000090;
     border-bottom: 1px solid #581364;
+    border-radius: 10px 10px 0 0;
     user-select: none;
 }
 
