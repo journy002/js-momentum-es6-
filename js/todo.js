@@ -9,10 +9,6 @@ function saveTodos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
-function idFilter(todo) {
-    return todo.id !== id;
-}
-
 function deleteTodo(event) {
     const target = event.target;
     const li = target.parentNode;
