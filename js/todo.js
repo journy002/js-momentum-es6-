@@ -52,8 +52,6 @@ todoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-console.log(savedToDos, "out");
-
 if (savedToDos !== null) {
     // JSON.stringfy()로 localStorage에 저장된 string을 다시 사용가능한 Object로 변경해주기 위해
     // JSON.parse()을 이용한다.
