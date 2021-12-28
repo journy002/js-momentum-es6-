@@ -64,6 +64,10 @@ span {
     font-size: var(--font-large);
 }
 
+.momentum_container .todo-form {
+    margin-bottom: 15px;
+}
+
 .momentum_container .todo-form input {
     padding: 5px 20px;
     width: 12rem;
@@ -80,11 +84,41 @@ span {
     color: var(--color-white);
 }
 
+#todo-list {
+    padding-left: 0;
+    width: 13rem;
+    height: 7rem;
+    list-style: none;
+    overflow-y: auto;
+}
+
+#todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    background-color: #00000090;
+    border-bottom: 1px solid #581364;
+    user-select: none;
+}
+
+#todo-list li span {
+    font-size: var(--font-regular);
+}
+
+#todo-list li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 #quotes {
     position: absolute;
     bottom: 1.5rem;
     font-size: var(--font-middle_small);
     text-align: center;
+    line-height: 1.5rem;
 }
 
 #quotes span {
