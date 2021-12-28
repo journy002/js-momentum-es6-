@@ -9,16 +9,23 @@ function saveTodos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
+function idFilter(todo) {
+    return todo.id !== id;
+}
+
 function deleteTodo(event) {
     const target = event.target;
     const li = target.parentNode;
     li.remove();
+    todos = todos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveTodos(); // filter로 매치되는 id가 아닌 값들을 불러온 다음 그 값들을 다시 저장해 주는걸 잊지 말자.
 }
 
 function paintTodo(newTodo) {
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteTodo);
@@ -32,8 +39,12 @@ function handleToDoSubmit(event) {
     const newTodo = todoInput.value;
     console.log(newTodo);
     todoInput.value = "";
-    todos.push(newTodo);
-    paintTodo(newTodo);
+    const newToDoObj = {
+        id: Date.now(),
+        text: newTodo,
+    };
+    todos.push(newToDoObj);
+    paintTodo(newToDoObj);
     saveTodos();
 }
 
